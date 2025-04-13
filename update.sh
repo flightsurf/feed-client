@@ -186,7 +186,7 @@ fi
 
 
 MLAT_REPO="https://github.com/flightsurf/mlat-client.git"
-MLAT_BRANCH="master"
+MLAT_BRANCH="main"
 MLAT_VERSION="$(git ls-remote $MLAT_REPO $MLAT_BRANCH | cut -f1 || echo $RANDOM-$RANDOM )"
 if [[ $REINSTALL != yes ]] && grep -e "$MLAT_VERSION" -qs $IPATH/mlat_version \
     && grep -qs -e '#!' "$VENV/bin/mlat-client" && { systemctl is-active flightsurf-mlat &>/dev/null || [[ "${MLAT_DISABLED}" == "1" ]]; }
